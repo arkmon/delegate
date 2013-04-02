@@ -48,6 +48,11 @@
         popoverController.delegate = self;
     }
 }
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 - (IBAction)togglePopover:(id)sender
 {
@@ -57,6 +62,7 @@
     } else {
         [self performSegueWithIdentifier:@"showAlternate" sender:sender];
     }
+    
 }
 
 @end
